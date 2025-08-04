@@ -83,7 +83,6 @@ function HomeComponent() {
 
 export default withAuth(HomeComponent);
 
-// Here's how your system works based on your code:
 
 // 1. Landing Page and "Get Started" Button
 // The landing page (src/pages/landing.jsx) shows a "Get Started" button.
