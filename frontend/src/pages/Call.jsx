@@ -83,37 +83,3 @@ function HomeComponent() {
 
 export default withAuth(HomeComponent);
 
-// Here's how  system works based on your code:
-
-// 1. Landing Page and "Get Started" Button
-// The landing page (src/pages/landing.jsx) shows a "Get Started" button.
-// When you click "Get Started", it routes you to /auth using React Router's Link component.
-// 2. What Happens at /auth?
-// The /auth route renders the Authentication component.
-// This component lets users register or login.
-// Register: Calls handleRegister from AuthContext, which sends a POST request to your backend to create a new user.
-// Login: Calls handleLogin, which sends a POST request to log in. If successful, it stores a token in localStorage and navigates to /home.
-// 3. How Does a Meeting Start?
-// After login, you are routed to /home, which renders HomeComponent.
-// Here, you can enter a meeting code and click "Join".
-// This calls addToUserHistory (adds the meeting code to your history in the backend).
-// Then, it navigates to /${meetingCode} (e.g., /aljk23).
-// 4. How Does the Video Call Work?
-// The route /:url renders VideoMeetComponent.
-// This component:
-// Connects to the backend via Socket.IO.
-// Handles video/audio streams, chat, screen sharing, etc.
-// The meeting code in the URL is used to join the correct room.
-// Summary of Flow
-// Landing Page → Click "Get Started" → /auth
-// /auth → Register/Login → /home
-// /home → Enter meeting code & Join → /:meetingCode
-// /:meetingCode → Video call starts in VideoMeetComponent
-// Key files:
-
-// landing.jsx
-// authentication.jsx
-// home.jsx
-// VideoMeet.jsx
-// AuthContext.jsx
-// // If you want a meeting code to be generated automatically when clicking "Get Started", you would need to add logic to generate a code and route to that code (instead of /auth). Currently, "Get Started" only takes you to authentication.
