@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     if (token) {
       axios
-        .get("http://localhost:4000/api/v1/users/me", {
+        .get("https://healthcare-backened.onrender.com/api/v1/users/me", {
           headers: { "x-auth-token": token },
         })
         .then((res) => setUser(res.data.user))
@@ -20,14 +20,14 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const register = async (formData) => {
-    const res = await axios.post("http://localhost:4000/api/v1/users/register", formData);
+    const res = await axios.post("https://healthcare-backened.onrender.com/api/v1/users/register", formData);
     localStorage.setItem("token", res.data.token);
     setToken(res.data.token);
     setUser(res.data.user);
   };
 
   const login = async (formData) => {
-    const res = await axios.post("http://localhost:4000/api/v1/users/login", formData);
+    const res = await axios.post("https://healthcare-backened.onrender.com/api/v1/users/login", formData);
     localStorage.setItem("token", res.data.token);
     setToken(res.data.token);
     setUser(res.data.user);
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
 const getUserHistory = async () => {
     try {
-        let request = await axios.get("http://localhost:4000/api/v1/users/get_all_activity", {
+        let request = await axios.get("https://healthcare-backened.onrender.com/api/v1/users/get_all_activity", {
             params: {
                 token: localStorage.getItem("token")
             }
@@ -58,7 +58,7 @@ const getUserHistory = async () => {
 
 const addToUserHistory = async (meetingCode) => {
     try {
-        let request = await axios.post("http://localhost:4000/api/v1/users/add_to_activity", {
+        let request = await axios.post("https://healthcare-backened.onrender.com/api/v1/users/add_to_activity", {
             token: localStorage.getItem("token"),
             meeting_code: meetingCode
         });

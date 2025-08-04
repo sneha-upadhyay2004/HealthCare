@@ -12,14 +12,14 @@ const HospitalPage = () => {
   const [search, setSearch] = useState("");
 
   const fetchHospitals = async () => {
-    const res = await axios.get("http://localhost:4000/api/v1/hospital/all");
+    const res = await axios.get("https://healthcare-backened.onrender.com/api/v1/hospital/all");
     setHospitals(res.data.hospitals);
   };
 
   const handleCreate = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/api/v1/hospital/create", formData, {
+      await axios.post("https://healthcare-backened.onrender.com/api/v1/hospital/create", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchHospitals();
@@ -31,7 +31,7 @@ const HospitalPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/v1/hospital/delete/${id}`, {
+      await axios.delete(`https://healthcare-backened.onrender.com/api/v1/hospital/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchHospitals();

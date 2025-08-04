@@ -67,7 +67,7 @@ const SendForSelf = () => {
 
     try {
       await axios.post(
-        "http://localhost:4000/api/v1/emergency/self",
+        "https://healthcare-backened.onrender.com/api/v1/emergency/self",
         // { for: "self", location },
          {
     for: "self",

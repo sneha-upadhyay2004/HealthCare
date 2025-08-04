@@ -48,7 +48,7 @@ const SendForOthers = () => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:4000/api/v1/emergency/other", formData, {
+      await axios.post("https://healthcare-backened.onrender.com/api/v1/emergency/other", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",

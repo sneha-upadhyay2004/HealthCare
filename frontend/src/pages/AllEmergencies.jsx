@@ -7,7 +7,7 @@ const AllEmergencies = () => {
   const fetchEmergencies = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:4000/api/v1/emergency/all", {
+      const res = await axios.get("https://healthcare-backened.onrender.com/api/v1/emergency/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEmergencies(res.data.emergencies);
@@ -23,7 +23,7 @@ const AllEmergencies = () => {
   const handleHelp = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.put(`http://localhost:4000/api/v1/emergency/help/${id}`, {}, {
+      const res = await axios.put(`https://healthcare-backened.onrender.com/api/v1/emergency/help/${id}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("You are now helping this emergency.");
@@ -78,7 +78,7 @@ const AllEmergencies = () => {
 
             {/* {emergency.helpedBy ? (
               <p style={{ color: "green", fontWeight: "bold" }}>
-                ✅ Helped By: {emergency.helpedBy?.id?.name}
+                 Helped By: {emergency.helpedBy?.id?.name}
                
               </p>
             ) : (

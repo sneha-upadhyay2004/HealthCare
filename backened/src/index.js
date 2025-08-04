@@ -43,16 +43,3 @@ const start = async () => {
 }
 start()
 
-// 'mongodb+srv://s8409379:5twzxNAvSEuYQ4KK@healthcare.dacizbd.mongodb.net/
-// app.use("/api/v1/users", userRoutes);
-// app.use("/api/v1/emergency",EmergencyRoutes);
-// app.use("/api/hospitals",HospitalRoutes)
-
-// mport mongoose from "mongoose"
-// import dotenv from 'dotenv';
-// dotenv.config();
-// import cors from "cors";
-// import { connectToSocket } from "./controllers/Socket.js";
-// import userRoutes from './routes/userRoutes.js';
-// import  EmergencyRoutes from "./routes/EmergencyRoutes.js";
-// import  HospitalRoutes  from "./routes/HospitalRoutes.js";
