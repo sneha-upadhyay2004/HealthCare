@@ -89,6 +89,7 @@ const AllEmergencies = () => {
                 {emergency.helpedBy ? (
   <div style={{ color: "green", fontWeight: "bold" }}>
     ✅ Helped By: {emergency.helpedBy?.id?.name}
+    ✅ Helped By: {emergency.helpedBy?.id?.phone}
     {emergency.hospitalDetails && (
       <>
         <p><strong>Hospital Name:</strong> {emergency.hospitalDetails.name}</p>
