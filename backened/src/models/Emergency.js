@@ -1,16 +1,11 @@
 
 import mongoose from "mongoose";
-// import  Hospital  from "./Hospital";
-// import user from "./User";
+import  Hospital  from "./Hospital";
+import user from "./User";
 
 const emergencySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  // Prefilled User Info (Self Emergencies Only)
-  // name: String,
-  // email: String,
-  // phone: String,
-  // age: Number,
-  // gender: String,
+  
   for: { type: String, enum: ["self", "others"], required: true },
   location: {
     coordinates: { type: [Number], required: true }, // [lng, lat]
