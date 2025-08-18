@@ -37,6 +37,7 @@ export const connectToSocket = (server) =>{
               io.to(socket.id).emit("chat-message", messages[path][a]['data'], messages[path][a]['sender'], messages[path][a]['socket-id-sender'])
                 }
             }
+            //io.to means kisko vo chij dikhaani hae ya bhejni hae 
           
         })
         //ensure the new user sees the chat hstory when joined

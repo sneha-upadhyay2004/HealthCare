@@ -16,7 +16,7 @@ const SendForOthers = () => {
   const [location, setLocation] = useState({ coordinates: [], address: "" });
 
   const geocoderRef = useRef(null);
-
+  
   const handleLocationSelect = (lng, lat, address) => {
     setLocation({ coordinates: [lng, lat], address });
 
@@ -92,7 +92,7 @@ const SendForOthers = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-4 space-y-4">
-      <h2 className="text-xl font-bold">Send Emergency for Others</h2>
+      {/* <h2 className="text-xl font-bold">Send Emergency for Others</h2> */}
 
       <label className="block">Gender:</label>
       <select

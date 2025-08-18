@@ -90,8 +90,8 @@ const SendForSelf = () => {
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto shadow-lg rounded-lg bg-white mt-10">
-      <h2 className="text-2xl font-bold mb-4 text-center">Send SOS For Self</h2>
+    <div className="p-6 max-w-4xl mx-auto shadow-lg rounded-lg bg-white mt-0">
+      {/* <h2 className="text-2xl font-bold mb-4 text-center">Send SOS For Self</h2> */}
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <input type="text" value={user?.name} disabled className="p-2 border rounded" />

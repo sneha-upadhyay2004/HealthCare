@@ -10,7 +10,7 @@ export const createHospital = async (req, res) => {
       return res.status(403).json({ message: "Only hospitals can create hospital entries" });
     }
 
-    const hospital = new Hospital({
+    const hospital = new Hospital({  
       name,
       phone,
       address,
