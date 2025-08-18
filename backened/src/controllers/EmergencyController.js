@@ -46,7 +46,7 @@ export const sendForOthers = async (req, res) => {
     }
 
     const emergency = new Emergency({
-      for: 'others', // ✅ Fix here
+      for: 'others', 
       user: req.user._id,
       gender,
       image: {
@@ -69,7 +69,6 @@ export const sendForOthers = async (req, res) => {
 
 
 
-// ✅ Show all emergencies (self + others)
 // export const getAllEmergencies = async (req, res) => {
 //   try {
 //    const emergencies = await Emergency.find()
@@ -123,14 +122,13 @@ export const helpEmergency = async (req, res) => {
     const emergency = await Emergency.findById(req.params.id);
     if (!emergency) return res.status(404).json({ message: "Emergency not found" });
 
-    const user = req.user; // ✅ use req.user from auth middleware
-
+    const user = req.user; 
     // Only hospital can help
     if (user.role !== "hospital") {
       return res.status(403).json({ message: "Only hospitals can help emergencies" });
     }
 
-    emergency.helpedBy = { id: user._id }; // ✅ store inside `helpedBy.id`
+    emergency.helpedBy = { id: user._id }; //  store inside `helpedBy.id`
     await emergency.save();
 
     res.status(200).json({ message: "Emergency marked as helped", emergency });

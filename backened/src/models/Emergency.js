@@ -1,7 +1,7 @@
 
 import mongoose from "mongoose";
-// import  Hospital  from "./Hospital";
-// import user from "./User";
+import  Hospital  from "./Hospital";
+import user from "./User";
 
 const emergencySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
